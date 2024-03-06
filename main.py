@@ -12,7 +12,7 @@ collection = db['demo']
 
 def fetchdata():    
     print("Scheduler running")
-    resultsperpage = 25
+    resultsperpage = 50
     startIndex = 0
     collection.delete_many({})
     while True:
@@ -29,7 +29,7 @@ def fetchdata():
                 insertingdata = data['vulnerabilities']
                 json_data = json_util.loads(json_util.dumps(insertingdata))
                 collection.insert_many(json_data)
-                print("data inserted")
+                print(" 50 data inserted")
                 if len(data) <= 0:
                     break  
                 else:

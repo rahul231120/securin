@@ -1,0 +1,31 @@
+Scheduler:
+
+Time: 10:00 AM every day
+Functionality:
+Fetch data from the endpoint in small chunks of 50 records.
+Push the fetched data into the database.
+Perform a full refresh of data each time the scheduler runs next.
+
+ENDPOINT:
+
+/cve  - GET REQUEST
+
+This endpoint retrieves CVE details from the database. It supports filtering by CVE ID, base score, and last modified date.
+
+Query Parameters:
+
+- 'cve_id'(optional): CVE ID to filter CVE details.
+- 'base_score' (optional): Base score to filter CVE details.
+- 'last_modified' (optional): Last modified date to filter CVE details.
+
+Response:
+
+The response is a JSON array of CVE details matching the filter criteria.
+
+Example
+
+GET /cve?cve_id=CVE-2022-1234&base_score=10
+
+
+
+
